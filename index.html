@@ -30,6 +30,7 @@
                     <input type="password" placeholder="Password" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-success">Sign in</button>
+                <button type="submit" class="btn btn-success">Create Account</button>
             </form>
         </div><!--/.navbar-collapse -->
     </div>
@@ -49,8 +50,16 @@
     <div class="row">
         <div class="col-md-4">
             <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p id="head1">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <button onclick="testFunction()">Click me</button>
+            <script>
+                function testFunction(){
+                    var user = new User();
+                    document.getElementById('head1').innerHTML=user.test();
+                }
+            </script>
+
         </div>
         <div class="col-md-4">
             <h2>Heading</h2>
