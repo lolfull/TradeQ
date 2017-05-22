@@ -24,4 +24,8 @@ class User {
 			return false;
 		}
 	}
+	
+	test(){
+		return "Test Output.";
+	}
 }
