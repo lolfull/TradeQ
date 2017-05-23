@@ -39,3 +39,13 @@ exports.findById = function(req, res) {
         });
     });
 };
+
+exports.findByUserName = function(req, res) {
+    var uName = req.params.id;
+    console.log('Retrieving user: ' + uName);
+    db.collection('users', function(err, collection) {
+        collection.findOne({username: uName}, function(err, item) {
+            res.send(item);
+        });
+    });
+};
