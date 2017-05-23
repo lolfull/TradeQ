@@ -5,7 +5,12 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var MongoClient = require('mongodb').MongoClient;
-var monk = require('monk');
+
+MongoClient.connect("mongodb://localhost:27017/TradeQ", function(err, db) {
+    if(!err) {
+        console.log("We are connected");
+    }
+});
 
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
