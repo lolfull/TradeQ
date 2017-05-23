@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/lolfull/TradeQ#readme",
   "dependencies": {
-    "express": "^4.15.3",
-	"mongodb": "~1.4.26"
+    "express": "^4.15.3"
   }
 }
