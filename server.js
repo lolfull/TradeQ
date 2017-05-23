@@ -4,13 +4,9 @@
 var express = require('express');
 var path = require('path');
 var app = express();
-var MongoClient = require('mongodb').MongoClient;
+var users = require('userDb');
 
-MongoClient.connect("mongodb://localhost:27017/TradeQ", function(err, db) {
-    if(!err) {
-        console.log("We are connected");
-    }
-});
+app.get('/users', wine.findAll);
 
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -19,6 +15,8 @@ app.all('*', function(req, res, next) {
 });
 
 app.use(express.static(__dirname + '/'));
+
+app.get('/users', users.findAll);
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
