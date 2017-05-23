@@ -22,7 +22,7 @@ function MongoDBConn(){
         var assert = require('assert');
         MongoClient.connect("mongodb://localhost:8080/TradeQ", function(err, db) {
             if(!err) {
-                console.log("We are connected");
+                console.log("We are connected!");
             }
             selectedUser = db.users.find(ObjectId(id));
             db.close();
