@@ -22,6 +22,8 @@ app.get('/users/:id', users.findById);
 
 app.get('/users/username/:id', users.findByUserName);
 
+app.post('/users', users.addUsers);
+
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
