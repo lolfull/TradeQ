@@ -25,7 +25,7 @@ function Portfolio() {
 	}
 
 	this.getCurrentStockPrice=function(stockId){
-		return 1;
+		return 2;
 	}
 }
 
