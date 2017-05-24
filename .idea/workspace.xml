@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="58aa9fe9-7f75-404f-a54d-ae4e59a9b9fb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userDb.js" afterPath="$PROJECT_DIR$/userDb.js" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -49,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userDb.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="userDb.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/userDb.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="50" column="2" lean-forward="true" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
+            <state relative-caret-position="271">
+              <caret line="48" column="11" lean-forward="true" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
               <folding>
                 <element signature="e#0#48#0" expanded="false" />
               </folding>
@@ -61,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -591,7 +590,7 @@
       <workItem from="1495469868813" duration="7175000" />
       <workItem from="1495477089920" duration="22000" />
       <workItem from="1495501487961" duration="6585000" />
-      <workItem from="1495591355395" duration="2197000" />
+      <workItem from="1495591355395" duration="2735000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed link redirect.">
       <created>1495477767311</created>
@@ -614,11 +613,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495504573042</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Setup POST request for adding a user.">
+      <created>1495594852755</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1495594852755</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17649000" />
+    <option name="totallyTimeSpent" value="18187000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -664,7 +670,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed link redirect." />
     <MESSAGE value="Incorporated MongoDB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Incorporated MongoDB" />
+    <MESSAGE value="Setup POST request for adding a user." />
+    <option name="LAST_COMMIT_MESSAGE" value="Setup POST request for adding a user." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1078,21 +1085,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../node_modules/bson/lib/bson/objectid.js" />
-    <entry file="file://$PROJECT_DIR$/userDb.js">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="50" column="2" lean-forward="true" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="408">
+          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
+    <entry file="file://$PROJECT_DIR$/userDb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="271">
+          <caret line="48" column="11" lean-forward="true" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -53,7 +53,7 @@ exports.findByUserName = function(req, res) {
 exports.addUsers = function(req, res) {
     var users = req.body;
     console.log('Adding user: ' + JSON.stringify(users));
-    db.collection('wines', function(err, collection) {
+    db.collection('users', function(err, collection) {
         collection.insert(users, {safe:true}, function(err, result) {
             if (err) {
                 res.send({'error':'An error has occurred'});
