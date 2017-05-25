@@ -14,7 +14,7 @@ function Portfolio() {
 	}
 
     this.getCurrentStockPrice=function(stockId){
-        return 2;
+        return 1;
     }
 
 	//BUY METHOD
