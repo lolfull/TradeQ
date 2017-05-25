@@ -3,6 +3,7 @@
  */
 var express = require('express');
 var path = require('path');
+var bodyParser = require("body-parser");
 var app = express();
 var users = require(__dirname + '/userDb');
 
@@ -15,6 +16,10 @@ app.all('*', function(req, res, next) {
 });
 
 app.use(express.static(__dirname + '/'));
+
+app.use(bodyParser.urlencoded);
+
+app.use(bodyParser.json);
 
 app.get('/users', users.findAll);
 
