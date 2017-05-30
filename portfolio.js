@@ -53,6 +53,13 @@ function Portfolio() {
 
 		this.addAssets(units * this.getCurrentStockPrice(stockId));
 	}
+
+	this.generateChart=function(){
+        var myChart = new JSChart('chartid', 'pie');
+        myChart.setDataXML("data.xml");
+        myChart.draw();
+	}
+
 }
 
 	

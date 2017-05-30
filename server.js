@@ -17,6 +17,10 @@ app.get('/createUser', function(req, res){
     res.sendFile(path.join(__dirname+ '/createUser.html'));
 });
 
+app.get('/portfolioOverview', function(req, res){
+    res.sendFile(path.join(__dirname+ '/portfolioOverview.html'));
+});
+
 app.use(express.static(__dirname + '/'));
 
 app.use(bodyParser.json());
