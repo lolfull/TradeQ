@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="jumbotron.css" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TradeQ</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" placeholder="Email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success">Sign in</button>
+                <button type="submit" class="btn btn-success" onclick="window.open('/createUser', '_blank')">Create Account</button>
+            </form>
+        </div><!--/.navbar-collapse -->
+    </div>
+</nav>
+<div class="container">
+    <br>
+    <script type="application/javascript">
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $http) {
+            $http({
+                method : "GET",
+                url : "https://www.quandl.com/api/v3/datasets/WIKI/AAPL.json?start_date=2017-05-26api_key=oVbLj3p5Fg7A9JgLrDdFF"
+            }).then(function mySucces(response) {
+                console.log("POST SUCCESSFUL");
+                $scope.posts = response.data.dataset.data;
+                $scope.stockPrice = "APPL";
+            }, function myError(response) {
+                console.log("ERROR: POST UNSUCCESSFUL");
+            });
+        });
+    </script>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>{{stockPrice}}</p>
+        <p>{{posts[0][4]}}</p>
+    </div>
+    <hr>
+    <footer>
+        <p>&copy; 2017 Company, Inc.</p>
+    </footer>
+</div>
+</body>
+</html>
