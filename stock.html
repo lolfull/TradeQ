@@ -40,25 +40,31 @@
     <script type="application/javascript">
         var app = angular.module('myApp', []);
         app.controller('myCtrl', function($scope, $http) {
-            $http({
-                method : "GET",
-                url : "https://www.quandl.com/api/v3/datasets/WIKI/AAPL.json?start_date=2017-05-26api_key=oVbLj3p5Fg7A9JgLrDdFF"
-            }).then(function mySucces(response) {
-                console.log("POST SUCCESSFUL");
-                $scope.posts = response.data.dataset.data;
-                $scope.stockPrice = "APPL";
-            }, function myError(response) {
-                console.log("ERROR: POST UNSUCCESSFUL");
-            });
+            $scope.add = function(stock){
+                $http({
+                    method : "GET",
+                    url : "https://www.quandl.com/api/v3/datasets/WIKI/" + stock + ".json?start_date=2017-05-26api_key=oVbLj3p5Fg7A9JgLrDdFF"
+                }).then(function mySucces(response) {
+                    console.log("POST SUCCESSFUL");
+                    $scope.posts = response.data.dataset.data;
+                    $scope.stockTicker = stock;
+                }, function myError(response) {
+                    console.log("ERROR: POST UNSUCCESSFUL");
+                });
+            }
         });
     </script>
     <div ng-app="myApp" ng-controller="myCtrl">
-        <p>{{stockPrice}}</p>
+        <div class="form-group">
+            <input class="form-control" type="text" ng-model="stock"><br>
+            <button type="btn btn-default" ng-click="add(stock)">Get Quote</button>
+        </div>
+        <p>{{stockTicker}}</p>
         <p>{{posts[0][4]}}</p>
     </div>
     <hr>
     <footer>
-        <p>&copy; 2017 Company, Inc.</p>
+        <p>&copy; 2017 Company, Inc. </p>
     </footer>
 </div>
 </body>
