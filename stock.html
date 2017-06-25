@@ -43,7 +43,7 @@
             $scope.add = function(stock){
                 $http({
                     method : "GET",
-                    url : "https://www.quandl.com/api/v3/datasets/WIKI/" + stock + ".json?start_date=2017-05-26api_key=oVbLj3p5Fg7A9JgLrDdFF"
+                    url : "https://www.quandl.com/api/v3/datasets/WIKI/" + stock.toUpperCase() + "/data.json?start_date=2017-05-26api_key=oVbLj3p5Fg7A9JgLrDdFF"
                 }).then(function mySucces(response) {
                     console.log("POST SUCCESSFUL");
                     $scope.posts = response.data.dataset.data;
