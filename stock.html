@@ -41,17 +41,20 @@
         var app = angular.module('myApp', []);
         app.controller('myCtrl', function($scope, $http) {
             $scope.add = function(stock){
+                console.log(stock.toUpperCase());
                 $http({
                     method : "GET",
                     url : "https://www.quandl.com/api/v3/datasets/WIKI/" + stock.toUpperCase() + "/data.json?start_date=2017-05-26api_key=oVbLj3p5Fg7A9JgLrDdFF"
                 }).then(function mySucces(response) {
                     console.log("POST SUCCESSFUL");
-                    $scope.posts = response.data.dataset.data;
-                    $scope.stockTicker = stock;
+                    console.log(response);
+                    $scope.posts = response.data.dataset_data.data;
+                    $scope.stockTicker = stock.toUpperCase();
                 }, function myError(response) {
                     console.log("ERROR: POST UNSUCCESSFUL");
                 });
             }
+            $scope.date = new Date();
         });
     </script>
     <div ng-app="myApp" ng-controller="myCtrl">
@@ -59,8 +62,10 @@
             <input class="form-control" type="text" ng-model="stock"><br>
             <button type="btn btn-default" ng-click="add(stock)">Get Quote</button>
         </div>
-        <p>{{stockTicker}}</p>
-        <p>{{posts[0][4]}}</p>
+        <p>Stock Ticker: {{stockTicker}}</p>
+        <p>Last Date: {{date | date:'yyyy-MM-dd'}}</p>
+        <p>Opening Price: {{posts[0][1]}}</p>
+        <p>Closing Price: {{posts[0][4]}}</p>
     </div>
     <hr>
     <footer>
