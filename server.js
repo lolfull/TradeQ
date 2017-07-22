@@ -3,11 +3,11 @@
  */
 var express = require('express');
 var path = require('path');
-var bodyParser = require("body-parser");
+// var bodyParser = require("body-parser");
 var app = express();
-var users = require(__dirname + '/userDb');
-
-app.get('/users', users.findAll);
+// var users = require(__dirname + '/userDb');
+//
+// app.get('/users', users.findAll);
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
@@ -23,15 +23,15 @@ app.get('/portfolioOverview', function(req, res){
 
 app.use(express.static(__dirname + '/'));
 
-app.use(bodyParser.json());
-
-app.get('/users', users.findAll);
-
-app.get('/users/:id', users.findById);
-
-app.get('/users/username/:id', users.findByUserName);
-
-app.post('/users', users.addUsers);
+// app.use(bodyParser.json());
+//
+// app.get('/users', users.findAll);
+//
+// app.get('/users/:id', users.findById);
+//
+// app.get('/users/username/:id', users.findByUserName);
+//
+// app.post('/users', users.addUsers);
 
 
 app.listen(8080, function () {
